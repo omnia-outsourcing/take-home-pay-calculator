@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Take-home Pay Calculator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator-container">
+        <img src="logo.png" alt="Company Logo" class="logo">
+
+        <h1>Take-home Pay Calculator</h1>
+
+        <div class="input-group">
+            <label for="hours">Contract Hours:</label>
+            <input type="number" id="hours" placeholder="Enter weekly hours">
+        </div>
+
+        <div class="input-group">
+            <label for="rate">Hourly Rate (£):</label>
+            <input type="number" id="rate" placeholder="Enter hourly rate">
+        </div>
+
+        <div class="input-group">
+            <label for="margin">Weekly Margin (£):</label>
+            <input type="number" id="margin" placeholder="Enter weekly margin">
+        </div>
+
+        <button onclick="calculatePay()">Calculate</button>
+
+        <div class="results-container">
+            <div class="result-box" id="cisBox">
+                <h4>CIS</h4>
+                <p><strong>Tax:</strong> £<span id="cisTax">0.00</span></p>
+                <p><strong>Take-home Pay:</strong> £<span id="cisTakeHome">0.00</span></p>
+            </div>
+
+            <div class="result-box" id="payeBox">
+                <h4>PAYE</h4>
+                <p><strong>Tax and NI:</strong> £<span id="payeTaxNI">0.00</span></p>
+                <p><strong>Take-home Pay:</strong> £<span id="payeTakeHome">0.00</span></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
