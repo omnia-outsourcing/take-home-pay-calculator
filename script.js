@@ -2,10 +2,17 @@ function calculatePay() {
     let hours = parseFloat(document.getElementById("hours").value);
     let rate = parseFloat(document.getElementById("rate").value);
     let margin = parseFloat(document.getElementById("margin").value);
+    let pension = parseFloat(document.getElementById("pension").value);
 
     if (isNaN(hours) || isNaN(rate) || isNaN(margin) || hours <= 0 || rate <= 0 || margin < 0) {
         alert("Please enter valid values.");
         return;
+    }
+
+    if (isNaN(pension)) || pension <= 0 {
+        pension = 0
+    } else {
+        pension = pension/100
     }
 
     let grossPay = hours * rate;
