@@ -28,11 +28,6 @@
             <input type="number" id="margin" placeholder="Enter weekly margin">
         </div>
 
-        <div class="input-group">
-            <label for="margin">Pension Cont. (%):</label>
-            <input type="number" id="pension" placeholder=0>
-        </div>
-
         <form>
             <label>
                 <input type="radio" name="payment_frequency" value="Weekly" checked> Weekly
@@ -63,6 +58,17 @@
                 <p><strong>Income Tax:</strong> £<span id="payeTax">0.00</span></p>
                 <p><strong>Employee NI:</strong> £<span id="employeeNI">0.00</span></p>
                 <p><strong>Take-home Pay:</strong> £<span id="payeTakeHome">0.00</span></p>
+            </div>
+
+            <div class="result-box" id="payePensBox">
+                <h4>PAYE</h4>
+                <p><strong>Employer NI:</strong> £<span id="employerNIPens">0.00</span></p>
+                <p><strong>Employer Pension:</strong> £<span id="employerPens">0.00</span></p>
+                <p><strong>Apprenticeship Levy:</strong> £<span id="appLevyPens">0.00</span></p>
+                <p><strong>Income Tax:</strong> £<span id="payeTaxPens">0.00</span></p>
+                <p><strong>Employee NI:</strong> £<span id="employeeNIPens">0.00</span></p>
+                <p><strong>Employee Pension:</strong> £<span id="employeePens">0.00</span></p>
+                <p><strong>Take-home Pay:</strong> £<span id="payeTakeHomePens">0.00</span></p>
             </div>
         </div>
     </div>
