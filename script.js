@@ -52,6 +52,7 @@ function calculatePay() {
         frequency = 12;
         LEL = 1,048.67;
         UEL = 4,186.33;
+    }
 
     let maxIterations = 1000000;
     for (let iteration = 0; iteration < maxIterations; iteration++) {
