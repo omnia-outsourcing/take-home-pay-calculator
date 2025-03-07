@@ -33,6 +33,20 @@
             <input type="number" id="pension" placeholder=0>
         </div>
 
+        <form>
+            <label>
+                <input type="radio" name="payment_frequency" value="Weekly"> Weekly
+            </label><br>
+  
+            <label>
+                <input type="radio" name="payment_frequency" value="Two-weekly"> Two-weekly
+            </label><br>
+  
+            <label>
+                <input type="radio" name="payment_frequency" value="Monthly"> Monthly
+            </label><br>
+        </form>
+
         <button onclick="calculatePay()">Calculate</button>
 
         <div class="results-container">
