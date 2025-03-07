@@ -105,6 +105,9 @@ function calculatePay() {
     // Display Results
     document.getElementById("cisTax").textContent = cisTax.toFixed(2);
     document.getElementById("cisTakeHome").textContent = cisTakeHome.toFixed(2);
-    document.getElementById("payeTaxNI").textContent = (payeTax + employeeNI).toFixed(2);
+    document.getElementById("payeTax").textContent = payeTax.toFixed(2);
+    document.getElementById("employeeNI").textContent = employeeNI.toFixed(2);
+    document.getElementById("employerNI").textContent = employerNI.toFixed(2);
+    document.getElementById("appLevy").textContent = appLevy.toFixed(2);
     document.getElementById("payeTakeHome").textContent = payeTakeHome.toFixed(2);
 }
