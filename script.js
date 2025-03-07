@@ -75,7 +75,7 @@ function calculatePay() {
         payeTax += (finalTaxablePay - (125140/52)) * 0.45;
         finalTaxablePay = 125140/52;
     }
-    if (finalTaxablePay > (50270/25)) {
+    if (finalTaxablePay > (50270/52)) {
         payeTax += (finalTaxablePay - (50270/52)) * 0.40;
         finalTaxablePay = 50270/52;
     }
@@ -90,7 +90,7 @@ function calculatePay() {
         finalTaxablePay = 967;
     }
     if (finalTaxablePay > 242) {
-        employeeNI += (finalTaxablePay - 242) * 0.10;
+        employeeNI += (finalTaxablePay - 242) * 0.08;
     }
 
     let payeTakeHome = finalTaxablePay - payeTax - employeeNI;
