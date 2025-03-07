@@ -53,10 +53,10 @@ function calculatePay() {
         higherPens = 1934;
     } else if (paymentFrequency.value == 'Monthly') {
         frequency = 12;
-        LEL = 1048.67;
-        UEL = 4186.33;
+        LEL = (242 * 52) / 12;
+        UEL = (967 * 52) / 12;
         lowerPens = 520;
-        higherPens = 4190.33;
+        higherPens = (967 * 52) / 12;
     }
 
     let maxIterations = 1000000;
