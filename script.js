@@ -3,7 +3,6 @@ function calculatePay() {
     let rate = parseFloat(document.getElementById("rate").value);
     let margin = parseFloat(document.getElementById("margin").value);
     let paymentFrequency = document.querySelector('input[name="payment_frequency"]:checked');
-    let selectedFrequency = paymentFrequency.value;
 
     if (isNaN(hours) || isNaN(rate) || isNaN(margin) || hours <= 0 || rate <= 0 || margin < 0) {
         alert("Please enter valid values.");
@@ -40,15 +39,15 @@ function calculatePay() {
     let tolerance = 0.05;
     let finalTaxablePay = 0;
     let frequency;
-    if (selectedFrequency == 'Weekly') {
+    if (paymentFrequency.value == 'Weekly') {
         frequency = 52;
         LEL = 242;
         UEL = 967;
-    } else if (selectedFrequency == 'Bi-weekly') {
+    } else if (paymentFrequency.value == 'Bi-weekly') {
         frequency = 26;
         LEL = 242 * 2;
         UEL = 967 * 2;
-    } else if (selectedFrequency == 'Monthly') {
+    } else if (paymentFrequency.value == 'Monthly') {
         frequency = 12;
         LEL = 1048.67;
         UEL = 4186.33;
