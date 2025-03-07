@@ -170,7 +170,7 @@ function calculatePay() {
     let payeTakeHomePens = finalTaxablePayPens - payeTaxPens - employeeNIPens - employeePens;
         
 
-    // Display Results
+
     document.getElementById("cisTax").textContent = cisTax.toFixed(2);
     document.getElementById("cisTakeHome").textContent = cisTakeHome.toFixed(2);
     document.getElementById("payeTax").textContent = payeTax.toFixed(2);
