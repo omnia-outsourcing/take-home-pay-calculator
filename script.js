@@ -3,8 +3,9 @@ function calculatePay() {
     let rate = parseFloat(document.getElementById("rate").value);
     let margin = parseFloat(document.getElementById("margin").value);
     const paymentFrequency = document.querySelector('input[name="payment_frequency"]:checked');
+    let selectedFrequency;
     if (paymentFrequency) {
-        const selectedFrequency = paymentFrequency.value;
+        selectedFrequency = paymentFrequency.value;
     }
 
     if (isNaN(hours) || isNaN(rate) || isNaN(margin) || hours <= 0 || rate <= 0 || margin < 0) {
