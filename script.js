@@ -41,15 +41,16 @@ function calculatePay() {
     let right = companyIncome;
     let tolerance = 0.05;
     let finalTaxablePay = 0;
-    if (paymentFrequency.value == 'Weekly') {
+    let frequency;
+    if (selectedFrequency == 'Weekly') {
         frequency = 52;
         LEL = 242;
         UEL = 967;
-    } else if (paymentFrequency.value == 'Bi-weekly') {
+    } else if (selectedFrequency == 'Bi-weekly') {
         frequency = 26;
         LEL = 242 * 2;
         UEL = 967 * 2;
-    } else if (paymentFrequency.value == 'Monthly') {
+    } else if (selectedFrequency == 'Monthly') {
         frequency = 12;
         LEL = 1048.67;
         UEL = 4186.33;
