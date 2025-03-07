@@ -41,17 +41,17 @@ function calculatePay() {
     let tolerance = 0.05;
     let finalTaxablePay = 0;
     if (paymentFrequency == 'Weekly') {
-        frequency = 52
-        LEL = 242
-        UEL = 967
+        frequency = 52;
+        LEL = 242;
+        UEL = 967;
     } else if (paymentFrequency == 'Bi-weekly') {
-        frequency = 26
-        LEL = 242 * 2
-        UEL = 967 * 2
+        frequency = 26;
+        LEL = 242 * 2;
+        UEL = 967 * 2;
     } else if (paymentFrequency == 'Monthly') {
-        frequency = 12
-        LEL = 1,048.67
-        UEL = 4,186.33
+        frequency = 12;
+        LEL = 1,048.67;
+        UEL = 4,186.33;
 
     let maxIterations = 1000000;
     for (let iteration = 0; iteration < maxIterations; iteration++) {
