@@ -5,6 +5,7 @@ function calculatePay() {
     const paymentFrequency = document.querySelector('input[name="payment_frequency"]:checked');
     if (paymentFrequency) {
         const selectedFrequency = paymentFrequency.value;
+    }
 
     if (isNaN(hours) || isNaN(rate) || isNaN(margin) || hours <= 0 || rate <= 0 || margin < 0) {
         alert("Please enter valid values.");
@@ -169,8 +170,6 @@ function calculatePay() {
 
     let payeTakeHomePens = finalTaxablePayPens - payeTaxPens - employeeNIPens - employeePens;
         
-
-
     document.getElementById("cisTax").textContent = cisTax.toFixed(2);
     document.getElementById("cisTakeHome").textContent = cisTakeHome.toFixed(2);
     document.getElementById("payeTax").textContent = payeTax.toFixed(2);
