@@ -8,10 +8,13 @@ function calculatePay() {
         alert("Please enter valid values.");
         return;
     }
-
     let grossPay = hours * rate;
     let companyIncome = hours * rate;
-    let basicPay = hours * 11.44;
+    if (rate > 100) {
+        basicPay = (hours * 7.5) * 11.44;
+    } else {
+        basicPay = hours * 11.44;
+    }
 
     let minHolidayPay = basicPay * 0.1207;
     let minEmployerNI = (basicPay - 175) * 0.138;
