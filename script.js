@@ -51,8 +51,8 @@ function calculatePay() {
         UEL = 967 * 2;
     } else if (paymentFrequency.value == 'Monthly') {
         frequency = 12;
-        LEL = 1,048.67;
-        UEL = 4,186.33;
+        LEL = 1048.67;
+        UEL = 4186.33;
     }
 
     let maxIterations = 1000000;
@@ -113,11 +113,11 @@ function calculatePay() {
         let employerNIPens = taxablePayPens > employerNIThreshold ? (taxablePayPens - employerNIThreshold) * employerNIRate : 0;
         let appLevyPens = taxablePayPens * 0.005;
         if (taxablePayPens > 967) {
-            let employerPens = (967 - 120) * 0.03;
+            employerPens = (967 - 120) * 0.03;
         } else if (taxablePayPens > 120) {
-            let employerPens = (taxablePayPens - 120) * 0.03;
+            employerPens = (taxablePayPens - 120) * 0.03;
         } else {
-            let employerPens = 0;
+            employerPens = 0;
         }
         let summationPens = taxablePayPens + margin + appLevyPens + employerNIPens + employerPens;
         if (Math.abs(summationPens - companyIncome) < tolerance) {
