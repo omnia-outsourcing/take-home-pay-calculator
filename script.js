@@ -19,7 +19,7 @@ function calculatePay() {
     let minEmployerNI = (basicPay - 175) * 0.138;
     let minAppLevy = basicPay * 0.005;
 
-    if (minEmployerNI < 0) minEmployerNI = 0;  // No Employer NI below the threshold
+    if (minEmployerNI < 0) minEmployerNI = 0;
 
     let minTotalCost = basicPay + minHolidayPay + minEmployerNI + minAppLevy + margin;
 
@@ -55,7 +55,7 @@ function calculatePay() {
 
     let maxIterations = 1000000;
     for (let iteration = 0; iteration < maxIterations; iteration++) {
-        let additional = (left + right) / 2;  // Midpoint of the range
+        let additional = (left + right) / 2;
         let holidayPay = (basicPay + additional) * 0.1207;
         let taxablePay = basicPay + additional + holidayPay;
         let employerNI = taxablePay > employerNIThreshold ? (taxablePay - employerNIThreshold) * employerNIRate : 0;
@@ -75,8 +75,8 @@ function calculatePay() {
     }
 
     let payeTax = 0;
-    taxPay = finalTaxablePay
-    niPay = finalTaxablePay
+    taxPay = finalTaxablePay;
+    niPay = finalTaxablePay;
     if (taxPay > (125140/frequency)) {
         payeTax += (taxPay - (125140/frequency)) * 0.45;
         taxPay = 125140/frequency;
@@ -106,17 +106,17 @@ function calculatePay() {
     let tolerance = 0.05;
     let finalTaxablePayPens = 0;
     for (let iteration = 0; iteration < maxIterations; iteration++) {
-        let additionalPens = (leftPens + rightPens) / 2;  // Midpoint of the range
+        let additionalPens = (leftPens + rightPens) / 2;
         let holidayPayPens = (basicPay + additionalPens) * 0.1207;
         let taxablePayPens = basicPay + additionalPens + holidayPayPens;
         let employerNIPens = taxablePayPens > employerNIThreshold ? (taxablePayPens - employerNIThreshold) * employerNIRate : 0;
         let appLevyPens = taxablePayPens * 0.005;
         if (taxablePayPens > 967) {
-            let employerPens = (967 - 120) * 0.03
+            let employerPens = (967 - 120) * 0.03;
         } else if (taxablePayPens > 120) {
-            let employerPens = (taxablePayPens - 120) * 0.03
+            let employerPens = (taxablePayPens - 120) * 0.03;
         } else {
-            let employerPens = 0
+            let employerPens = 0;
         }
         let summationPens = taxablePayPens + margin + appLevyPens + employerNIPens + employerPens;
         if (Math.abs(summationPens - companyIncome) < tolerance) {
@@ -134,9 +134,9 @@ function calculatePay() {
     }
 
     let payeTaxPens = 0;
-    taxPayPens = finalTaxablePayPens
-    niPayPens = finalTaxablePayPens
-    pensPay = finalTaxablePayPens
+    taxPayPens = finalTaxablePayPens;
+    niPayPens = finalTaxablePayPens;
+    pensPay = finalTaxablePayPens;
     if (taxPayPens > (125140/frequency)) {
         payeTaxPens += (taxPayPens - (125140/frequency)) * 0.45;
         taxPayPens = 125140/frequency;
