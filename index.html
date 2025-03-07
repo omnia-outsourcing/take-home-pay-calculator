@@ -12,37 +12,38 @@
         <img src="logo.png" alt="Company Logo" class="logo">
 
         <h1>Take-home Pay Calculator</h1>
+        <div class="input-container">
+            <div class="input-group">
+                <label for="hours">Contract Hours:</label>
+                <input type="number" id="hours" placeholder="Enter weekly hours">
+            </div>
 
-        <div class="input-group">
-            <label for="hours">Contract Hours:</label>
-            <input type="number" id="hours" placeholder="Enter weekly hours">
-        </div>
+            <div class="input-group">
+                <label for="rate">Hourly Rate (£):</label>
+                <input type="number" id="rate" placeholder="Enter hourly rate">
+            </div>
 
-        <div class="input-group">
-            <label for="rate">Hourly Rate (£):</label>
-            <input type="number" id="rate" placeholder="Enter hourly rate">
-        </div>
+            <div class="input-group">
+                <label for="margin">Weekly Margin (£):</label>
+                <input type="number" id="margin" placeholder="Enter weekly margin">
+            </div>
 
-        <div class="input-group">
-            <label for="margin">Weekly Margin (£):</label>
-            <input type="number" id="margin" placeholder="Enter weekly margin">
-        </div>
-
-        <form>
-            <label>
-                <input type="radio" name="payment_frequency" value="Weekly" checked> Weekly
-            </label><br>
+            <form>
+                <label>
+                    <input type="radio" name="payment_frequency" value="Weekly" checked> Weekly
+                </label><br>
   
-            <label>
-                <input type="radio" name="payment_frequency" value="Bi-weekly"> Bi-weekly
-            </label><br>
+                <label>
+                    <input type="radio" name="payment_frequency" value="Bi-weekly"> Bi-weekly
+                </label><br>
   
-            <label>
-                <input type="radio" name="payment_frequency" value="Monthly"> Monthly
-            </label><br>
-        </form>
+                <label>
+                    <input type="radio" name="payment_frequency" value="Monthly"> Monthly
+                </label><br>
+            </form>
 
-        <button onclick="calculatePay()">Calculate</button>
+            <button onclick="calculatePay()">Calculate</button>
+        </div>
 
         <div class="results-container">
             <div class="result-box" id="cisBox">
