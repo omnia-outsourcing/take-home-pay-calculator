@@ -14,17 +14,12 @@ h1 {
 body {
     background-color: #f9f9f9; /* Light gray background color for the entire page */
     color: #ffffff; /* Dark text color */
-    margin: 0; /* Remove any default margin */
-    padding: 0; /* Remove any default padding */
-    display: flex;
-    justify-content: center;
 }
 
 .calculator-container {
-    min-width: 800px;
-    max-width: 900px;
-    margin: 20px auto;
-    padding: 30px;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
