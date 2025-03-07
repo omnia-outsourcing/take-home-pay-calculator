@@ -54,12 +54,6 @@ function calculatePay() {
         if (Math.abs(summation - companyIncome) < tolerance) {
             finalTaxablePay = taxablePay;
             console.log(`FOUND AMOUNTS:`);
-            console.log(`Employer NI: £${employerNI.toFixed(2)}`);
-            console.log(`App. Levy: £${appLevy.toFixed(2)}`);
-            console.log(`Margin: £${margin.toFixed(2)}`);
-            console.log(`Basic pay: £${basicPay.toFixed(2)}`);
-            console.log(`Holiday pay: £${holidayPay.toFixed(2)}`);
-            console.log(`Additional taxable: £${additional.toFixed(2)}`);
             break;
         }
 
@@ -97,10 +91,6 @@ function calculatePay() {
     }
 
     let payeTakeHome = finalTaxablePay - payeTax - employeeNI;
-
-    console.log(`Tax: £${payeTax.toFixed(2)}`);
-    console.log(`Employee NI: £${employeeNI.toFixed(2)}`);
-    console.log(`TAKE-HOME PAY: £${payeTakeHome.toFixed(2)}`);
 
     // Display Results
     document.getElementById("cisTax").textContent = cisTax.toFixed(2);
