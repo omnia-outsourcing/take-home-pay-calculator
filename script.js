@@ -158,13 +158,13 @@ function calculatePay() {
         employeeNIPens += (niPayPens - LEL) * 0.08;
     }
 
-    let employeePens = 0
+    let employeePens = 0;
     if (pensPay > 967) {
-        employeePens = (967 - 120) * 0.04
+        employeePens = (967 - 120) * 0.04;
     } else if (pensPay > 120) {
-        employeePens = (pensPay - 120) * 0.04
+        employeePens = (pensPay - 120) * 0.04;
     } else {
-        employeePens = 0
+        employeePens = 0;
     }
 
     let payeTakeHomePens = finalTaxablePayPens - payeTaxPens - employeeNIPens - employeePens;
