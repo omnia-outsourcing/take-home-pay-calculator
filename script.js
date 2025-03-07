@@ -12,9 +12,9 @@ function calculatePay() {
     let companyIncome = hours * rate;
     let basicPay = hours * 11.44;
 
-    let minHolidayPay = basicPay * 0.1207; 
-    let minEmployerNI = (basicPay - 175) * 0.138;  
-    let minAppLevy = basicPay * 0.005;  
+    let minHolidayPay = basicPay * 0.1207;
+    let minEmployerNI = (basicPay - 175) * 0.138;
+    let minAppLevy = basicPay * 0.005;
 
     if (minEmployerNI < 0) minEmployerNI = 0;  // No Employer NI below the threshold
 
@@ -53,12 +53,13 @@ function calculatePay() {
 
         if (Math.abs(summation - companyIncome) < tolerance) {
             finalTaxablePay = taxablePay;
-            console.log(`Found one set of amounts`);
-            console.log(`Basic pay: £${basicPay.toFixed(2)}`);
-            console.log(`Additional taxable: £${additional.toFixed(2)}`);
-            console.log(`Holiday pay: £${holidayPay.toFixed(2)}`);
+            console.log(`FOUND AMOUNTS:`);
             console.log(`Employer NI: £${employerNI.toFixed(2)}`);
             console.log(`App. Levy: £${appLevy.toFixed(2)}`);
+            console.log(`Margin: £${margin.toFixed(2)}`);
+            console.log(`Basic pay: £${basicPay.toFixed(2)}`);
+            console.log(`Holiday pay: £${holidayPay.toFixed(2)}`);
+            console.log(`Additional taxable: £${additional.toFixed(2)}`);
             break;
         }
 
@@ -71,29 +72,35 @@ function calculatePay() {
     }
     // PAYE Income Tax Calculation
     let payeTax = 0;
-    if (finalTaxablePay > (125140/52)) {
-        payeTax += (finalTaxablePay - (125140/52)) * 0.45;
-        finalTaxablePay = 125140/52;
+    taxPay = finalTaxablePay
+    niPay = finalTaxablePay
+    if (taxPay > (125140/52)) {
+        payeTax += (taxPay - (125140/52)) * 0.45;
+        taxPay = 125140/52;
     }
-    if (finalTaxablePay > (50270/52)) {
-        payeTax += (finalTaxablePay - (50270/52)) * 0.40;
-        finalTaxablePay = 50270/52;
+    if (taxPay > (50270/52)) {
+        payeTax += (taxPay - (50270/52)) * 0.40;
+        taxPay = 50270/52;
     }
-    if (finalTaxablePay > (12570/52)) {
-        payeTax += (finalTaxablePay - (12570/52)) * 0.20;
+    if (taxPay > (12570/52)) {
+        payeTax += (taxPay - (12570/52)) * 0.20;
     }
 
     // Employee NI Calculation
     let employeeNI = 0;
-    if (finalTaxablePay > 967) {
-        employeeNI += (finalTaxablePay - 967) * 0.02;
-        finalTaxablePay = 967;
+    if (niPay > 967) {
+        employeeNI += (niPay - 967) * 0.02;
+        niPay = 967;
     }
-    if (finalTaxablePay > 242) {
-        employeeNI += (finalTaxablePay - 242) * 0.08;
+    if (niPay > 242) {
+        employeeNI += (niPay - 242) * 0.08;
     }
 
     let payeTakeHome = finalTaxablePay - payeTax - employeeNI;
+
+    console.log(`Tax: £${payeTax.toFixed(2)}`);
+    console.log(`Employee NI: £${employeeNI.toFixed(2)}`);
+    console.log(`TAKE-HOME PAY: £${payeTakeHome.toFixed(2)}`);
 
     // Display Results
     document.getElementById("cisTax").textContent = cisTax.toFixed(2);
