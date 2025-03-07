@@ -45,15 +45,14 @@ function calculatePay() {
         let taxablePay = basicPay + additional + holidayPay;
 
         // Employer NI calculation
-        let employerNI = taxablePay > employerNIThreshold ? (taxablePay - employerNIThreshold) * employerNIRate : 0;
+        employerNI = taxablePay > employerNIThreshold ? (taxablePay - employerNIThreshold) * employerNIRate : 0;
 
         // Apprenticeship Levy
-        let appLevy = taxablePay * 0.005;
+        appLevy = taxablePay * 0.005;
         let summation = taxablePay + margin + appLevy + employerNI;
 
         if (Math.abs(summation - companyIncome) < tolerance) {
             finalTaxablePay = taxablePay;
-            console.log(`FOUND AMOUNTS:`);
             break;
         }
 
@@ -90,14 +89,14 @@ function calculatePay() {
         employeeNI += (niPay - 242) * 0.08;
     }
 
-    let payeTakeHome = finalTaxablePay - payeTax - employeeNI;
+    payeTakeHome = finalTaxablePay - payeTax - employeeNI;
 
     // Display Results
     document.getElementById("cisTax").textContent = cisTax.toFixed(2);
     document.getElementById("cisTakeHome").textContent = cisTakeHome.toFixed(2);
-    document.getElementById("payeTax").textContent = payeTax.toFixed(2);
-    document.getElementById("employeeNI").textContent = employeeNI.toFixed(2);
     document.getElementById("employerNI").textContent = employerNI.toFixed(2);
     document.getElementById("appLevy").textContent = appLevy.toFixed(2);
+    document.getElementById("payeTax").textContent = payeTax.toFixed(2);
+    document.getElementById("employeeNI").textContent = employeeNI.toFixed(2);
     document.getElementById("payeTakeHome").textContent = payeTakeHome.toFixed(2);
 }
