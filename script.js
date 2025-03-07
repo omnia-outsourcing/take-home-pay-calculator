@@ -43,14 +43,20 @@ function calculatePay() {
         frequency = 52;
         LEL = 242;
         UEL = 967;
+        lowerPens = 120;
+        higherPens = 967;
     } else if (paymentFrequency.value == 'Bi-weekly') {
         frequency = 26;
         LEL = 242 * 2;
         UEL = 967 * 2;
+        lowerPens = 240;
+        higherPens = 1934;
     } else if (paymentFrequency.value == 'Monthly') {
         frequency = 12;
         LEL = 1048.67;
         UEL = 4186.33;
+        lowerPens = 520;
+        higherPens = 4190.33;
     }
 
     let maxIterations = 1000000;
@@ -110,10 +116,10 @@ function calculatePay() {
         let taxablePayPens = basicPay + additionalPens + holidayPayPens;
         let employerNIPens = taxablePayPens > employerNIThreshold ? (taxablePayPens - employerNIThreshold) * employerNIRate : 0;
         let appLevyPens = taxablePayPens * 0.005;
-        if (taxablePayPens > 967) {
-            employerPens = (967 - 120) * 0.03;
-        } else if (taxablePayPens > 120) {
-            employerPens = (taxablePayPens - 120) * 0.03;
+        if (taxablePayPens > higherPens) {
+            employerPens = (higherPens - lowerPens) * 0.03;
+        } else if (taxablePayPens > lowerPens) {
+            employerPens = (taxablePayPens - lowerPens) * 0.03;
         } else {
             employerPens = 0;
         }
@@ -158,10 +164,10 @@ function calculatePay() {
     }
 
     let employeePens = 0;
-    if (pensPay > 967) {
-        employeePens = (967 - 120) * 0.04;
-    } else if (pensPay > 120) {
-        employeePens = (pensPay - 120) * 0.04;
+    if (pensPay > higherPens) {
+        employeePens = (higherPens - lowerPens) * 0.04;
+    } else if (pensPay > lowerPens) {
+        employeePens = (pensPay - lowerPens) * 0.04;
     } else {
         employeePens = 0;
     }
