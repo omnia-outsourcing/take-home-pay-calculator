@@ -14,10 +14,11 @@ h1 {
 body {
     background-color: #f9f9f9; /* Light gray background color for the entire page */
     color: #ffffff; /* Dark text color */
+    width: 100%;
 }
 
 .calculator-container {
-    max-width: 600px;
+    width: 900px;
     margin: 50px auto;
     padding: 20px;
     border: 1px solid #ccc;
