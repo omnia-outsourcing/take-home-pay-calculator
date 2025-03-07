@@ -104,7 +104,6 @@ function calculatePay() {
 
     let leftPens = 0;
     let rightPens = companyIncome;
-    let tolerance = 0.05;
     let finalTaxablePayPens = 0;
     for (let iteration = 0; iteration < maxIterations; iteration++) {
         let additionalPens = (leftPens + rightPens) / 2;
