@@ -17,7 +17,7 @@ function calculatePay() {
     }
 
     let minHolidayPay = basicPay * 0.1207;
-    let minEmployerNI = (basicPay - (5000/52) * 0.15;
+    let minEmployerNI = (basicPay - (5000/52)) * 0.15;
     let minAppLevy = basicPay * 0.005;
 
     if (minEmployerNI < 0) minEmployerNI = 0;
@@ -36,7 +36,7 @@ function calculatePay() {
 
     // PAYE Calculation
     let employerNIRate = 0.15;
-    let employerNIThreshold = 5000/52;
+    let employerNIThreshold = (5000 / 52);
     let left = 0;
     let right = companyIncome;
     let tolerance = 0.05;
