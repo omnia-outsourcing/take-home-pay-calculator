@@ -11,13 +11,13 @@ function calculatePay() {
     let grossPay = hours * rate;
     let companyIncome = hours * rate;
     if (rate > 100) {
-        basicPay = (hours * 7.5) * 11.44;
+        basicPay = (hours * 7.5) * 12.21;
     } else {
-        basicPay = hours * 11.44;
+        basicPay = hours * 12.21;
     }
 
     let minHolidayPay = basicPay * 0.1207;
-    let minEmployerNI = (basicPay - 175) * 0.138;
+    let minEmployerNI = (basicPay - (5000/52) * 0.15;
     let minAppLevy = basicPay * 0.005;
 
     if (minEmployerNI < 0) minEmployerNI = 0;
@@ -35,8 +35,8 @@ function calculatePay() {
     let cisTakeHome = cisTaxablePay - cisTax;
 
     // PAYE Calculation
-    let employerNIRate = 0.138;
-    let employerNIThreshold = 175;
+    let employerNIRate = 0.15;
+    let employerNIThreshold = 5000/52;
     let left = 0;
     let right = companyIncome;
     let tolerance = 0.05;
