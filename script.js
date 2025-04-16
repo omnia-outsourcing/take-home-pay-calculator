@@ -152,7 +152,7 @@ function calculatePay() {
             employerPens = 0;
         }
         let summationPens = taxablePayPens + margin + appLevyPens + employerNIPens + employerPens;
-        if ((Math.abs(summationPens - companyIncome) < tolerance) && (companyIncome > minPensCost)) {
+        if (Math.abs(summationPens - companyIncome) < tolerance && companyIncome > minPensCost) {
             finalTaxablePayPens = taxablePayPens;
             document.getElementById("employerNIPens").textContent = employerNIPens.toFixed(2);
             document.getElementById("appLevyPens").textContent = appLevyPens.toFixed(2);
