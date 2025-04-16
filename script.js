@@ -73,17 +73,6 @@ function calculatePay() {
         higherPens = (967 * 52) / 12;
     }
 
-    if (basicPay > higherPens) {
-        minPens = (higherPens - lowerPens) * 0.03;
-    } else if (basicPay > lowerPens) {
-        minPens = (basicPay - lowerPens) * 0.03;
-    } else {
-        minPens = 0;
-    }
-
-    let minPensCost = basicPay + minHolidayPay + minEmployerNI + minAppLevy + margin + minPens;
-    console.log('companyIncome:',companyIncome);
-    console.log('minPayPens:',minPensCost);
     if (companyIncome < minPensCost) {
         alert("Rate is too low for umbrella PAYE with pension");
     }
@@ -157,10 +146,6 @@ function calculatePay() {
             console.log(summationPens)
             if (companyIncome > minPensCost) {
                 finalTaxablePayPens = taxablePayPens;
-                console.log("If statement did run");
-                console.log("employers NI: ", employerNIPens);
-                console.log("app levy: ", appLevyPens);
-                console.log("employer pension: ", employerPens);
                 document.getElementById("employerNIPens").textContent = employerNIPens.toFixed(2);
                 document.getElementById("appLevyPens").textContent = appLevyPens.toFixed(2);
                 document.getElementById("employerPens").textContent = employerPens.toFixed(2);
@@ -174,6 +159,10 @@ function calculatePay() {
         }
     }
 
+    if (finalTaxablePayPens == 0) {
+        alert("Rate is too low for umbrella PAYE with pension");
+    }
+    
     let payeTaxPens = 0;
     taxPayPens = finalTaxablePayPens;
     niPayPens = finalTaxablePayPens;
