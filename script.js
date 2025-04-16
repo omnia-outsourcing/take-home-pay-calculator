@@ -161,6 +161,8 @@ function calculatePay() {
                 document.getElementById("appLevyPens").textContent = appLevyPens.toFixed(2);
                 document.getElementById("employerPens").textContent = employerPens.toFixed(2);
                 break;
+            } else {
+                console.log("If statement did not run");
             }
         }
         if (summationPens < companyIncome) {
