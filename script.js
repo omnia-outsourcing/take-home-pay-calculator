@@ -74,7 +74,7 @@ function calculatePay() {
 
     if (basicPay > higherPens) {
         minPens = (higherPens - lowerPens) * 0.03;
-    } else if (taxablePayPens > lowerPens) {
+    } else if (basicPay > lowerPens) {
         minPens = (basicPay - lowerPens) * 0.03;
     } else {
         minPens = 0;
