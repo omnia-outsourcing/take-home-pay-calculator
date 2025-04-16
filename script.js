@@ -81,10 +81,10 @@ function calculatePay() {
     }
 
     let minPensCost = basicPay + minHolidayPay + minEmployerNI + minAppLevy + margin + minPens;
+    console.log('companyIncome:',companyIncome);
+    console.log('minPayPens:',minPensCost);
     if (companyIncome < minPensCost) {
         alert("Rate is too low for umbrella PAYE with pension");
-        console.log('companyIncome:',companyIncome);
-        console.log('minPayPens:',minPensCost);
     }
 
     let maxIterations = 1000000;
