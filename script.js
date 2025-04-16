@@ -81,9 +81,6 @@ function calculatePay() {
     }
 
     let minPensCost = basicPay + minHolidayPay + minEmployerNI + minAppLevy + margin + minPens;
-    console.log("Company income:", companyIncome);
-    console.log("Min. Pension Pay:", minPensCost);
-    // **Check if the company income is too low**
     if (companyIncome < minPensCost) {
         alert("Rate is too low for umbrella PAYE with pension");
     }
@@ -156,6 +153,10 @@ function calculatePay() {
         if (Math.abs(summationPens - companyIncome) < tolerance) {
             if (companyIncome > minPensCost) {
                 finalTaxablePayPens = taxablePayPens;
+                console.log("If statement did run");
+                console.log("employers NI: ", employerNIPens);
+                console.log("app levy: ", appLevyPens);
+                console.log("employer pension: ", employerPens);
                 document.getElementById("employerNIPens").textContent = employerNIPens.toFixed(2);
                 document.getElementById("appLevyPens").textContent = appLevyPens.toFixed(2);
                 document.getElementById("employerPens").textContent = employerPens.toFixed(2);
