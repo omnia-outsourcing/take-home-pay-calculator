@@ -1,4 +1,14 @@
 function calculatePay() {
+    const resultFields = [
+        'cisTax', 'cisTakeHome',
+        'employerNI', 'appLevy', 'payeTax', 'employeeNI', 'payeTakeHome',
+        'employerNIPens', 'employerPens', 'appLevyPens', 'payeTaxPens', 'employeeNIPens', 'employeePens', 'payeTakeHomePens'
+    ];
+
+    resultFields.forEach(id => {
+        document.getElementById(id).innerText = '0.00';
+    });
+    
     let hours = parseFloat(document.getElementById("hours").value);
     let rate = parseFloat(document.getElementById("rate").value);
     let margin = parseFloat(document.getElementById("margin").value);
