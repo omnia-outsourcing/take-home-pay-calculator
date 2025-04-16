@@ -33,6 +33,7 @@ function calculatePay() {
     if (minEmployerNI < 0) minEmployerNI = 0;
 
     let minTotalCost = basicPay + minHolidayPay + minEmployerNI + minAppLevy + margin;
+    console.log('minPay general:', minTotalCost)
 
     // **Check if the company income is too low**
     if (companyIncome < minTotalCost) {
