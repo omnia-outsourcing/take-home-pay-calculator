@@ -73,10 +73,6 @@ function calculatePay() {
         higherPens = (967 * 52) / 12;
     }
 
-    if (companyIncome < minPensCost) {
-        alert("Rate is too low for umbrella PAYE with pension");
-    }
-
     let maxIterations = 1000000;
     for (let iteration = 0; iteration < maxIterations; iteration++) {
         let additional = (left + right) / 2;
