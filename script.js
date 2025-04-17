@@ -139,14 +139,11 @@ function calculatePay() {
         }
         let summationPens = taxablePayPens + margin + appLevyPens + employerNIPens + employerPens;
         if (Math.abs(summationPens - companyIncome) < tolerance) {
-            console.log(summationPens)
-            if (companyIncome > minPensCost) {
-                finalTaxablePayPens = taxablePayPens;
-                document.getElementById("employerNIPens").textContent = employerNIPens.toFixed(2);
-                document.getElementById("appLevyPens").textContent = appLevyPens.toFixed(2);
-                document.getElementById("employerPens").textContent = employerPens.toFixed(2);
-                break;
-            }
+            finalTaxablePayPens = taxablePayPens;
+            document.getElementById("employerNIPens").textContent = employerNIPens.toFixed(2);
+            document.getElementById("appLevyPens").textContent = appLevyPens.toFixed(2);
+            document.getElementById("employerPens").textContent = employerPens.toFixed(2);
+            break;
         }
         if (summationPens < companyIncome) {
             leftPens = additionalPens;
